@@ -1,11 +1,10 @@
-export const drawTable = (context, {height, width}, cellsPerRow = 20) => {
-    const sizeByWidth = width / cellsPerRow;
-    const sizeByHeight = height / cellsPerRow;
+import {DEFAULT_CELLS_COUNT} from "./initCanvas";
 
-    for (let i = 0; i < cellsPerRow; i++) {
-        for (let j = 0; j < cellsPerRow; j++) {
+export const drawTable = (context, {xSize, ySize}) => {
+    for (let i = 0; i < DEFAULT_CELLS_COUNT; i++) {
+        for (let j = 0; j < DEFAULT_CELLS_COUNT; j++) {
             context.strokeStyle = '#adadad';
-            context.strokeRect(j * sizeByWidth, i * sizeByHeight, sizeByWidth, sizeByHeight);
+            context.strokeRect(j * xSize, i * ySize, xSize, ySize);
         }
     }
 };
